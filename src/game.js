@@ -1,6 +1,6 @@
-import { Application } from "pixi.js";
+import { Application, Assets } from "pixi.js";
 import { GAME_HEIGHT, GAME_WIDTH } from "./constant";
-
+import { PlayScene } from "./scenes/playScene";
 export default class Game{
     constructor(){
         this.app = new Application({
@@ -14,11 +14,13 @@ export default class Game{
     }
 
     loadAssets(){
-
+        Assets.load("./images/flappyBird.json");
+        this.setup();
     }
 
     setup(){
-
+        this.playScene = new PlayScene();
+        this.app.stage.addChild(this.playScene.playSceneContainer);
     }
 
     update(){

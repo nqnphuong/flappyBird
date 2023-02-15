@@ -6,9 +6,10 @@ export class Background extends Container {
     }
 
     create(){
-        let texture = Texture.from("images/background.png");
-        this.backgroundMain = new Sprite(texture);
-        this.backgroundAfter = new Sprite(texture);
-        this.backgroundBefore = new Sprite(texture);
+        // let texture = Texture.from("images/background.png");
+        // this.backgroundMain = new Sprite(texture);
+        // this.backgroundAfter = new Sprite(texture);
+        // this.backgroundBefore = new Sprite(texture);
+        
     }
 }
