@@ -50,7 +50,7 @@
         <key>dxtCompressionMode</key>
         <enum type="SettingsBase::DxtCompressionMode">DXT_PERCEPTUAL</enum>
         <key>ditherType</key>
-        <enum type="SettingsBase::DitherType">NearestNeighbour</enum>
+        <enum type="SettingsBase::DitherType">PngQuantLow</enum>
         <key>backgroundColor</key>
         <uint>0</uint>
         <key>libGdx</key>
@@ -180,11 +180,11 @@
                 <key>spriteScale</key>
                 <double>1</double>
                 <key>scale9Enabled</key>
-                <true/>
+                <false/>
                 <key>scale9Borders</key>
-                <rect>256,0,512,768</rect>
+                <rect>225,126,450,252</rect>
                 <key>scale9Paddings</key>
-                <rect>256,192,512,384</rect>
+                <rect>225,126,450,252</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
@@ -196,13 +196,13 @@
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
                 <key>spriteScale</key>
-                <double>0.1</double>
+                <double>1</double>
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>179,153,359,305</rect>
+                <rect>18,15,35,31</rect>
                 <key>scale9Paddings</key>
-                <rect>179,153,359,305</rect>
+                <rect>18,15,35,31</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
@@ -211,28 +211,13 @@
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
                 <key>spriteScale</key>
-                <double>0.05</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>200,200,400,400</rect>
-                <key>scale9Paddings</key>
-                <rect>200,200,400,400</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">flappyBird.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0,0</point_f>
-                <key>spriteScale</key>
                 <double>1</double>
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>128,357,256,713</rect>
+                <rect>10,10,20,20</rect>
                 <key>scale9Paddings</key>
-                <rect>128,357,256,713</rect>
+                <rect>10,10,20,20</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
@@ -241,13 +226,13 @@
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
                 <key>spriteScale</key>
-                <double>0.25</double>
+                <double>1</double>
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>53,48,105,95</rect>
+                <rect>13,12,26,23</rect>
                 <key>scale9Paddings</key>
-                <rect>53,48,105,95</rect>
+                <rect>13,12,26,23</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
@@ -256,13 +241,13 @@
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
                 <key>spriteScale</key>
-                <double>0.25</double>
+                <double>1</double>
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>56,48,113,95</rect>
+                <rect>14,12,28,23</rect>
                 <key>scale9Paddings</key>
-                <rect>56,48,113,95</rect>
+                <rect>14,12,28,23</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
@@ -271,13 +256,13 @@
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
                 <key>spriteScale</key>
-                <double>0.25</double>
+                <double>1</double>
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>55,48,110,95</rect>
+                <rect>14,12,27,23</rect>
                 <key>scale9Paddings</key>
-                <rect>55,48,110,95</rect>
+                <rect>14,12,27,23</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
@@ -286,13 +271,13 @@
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
                 <key>spriteScale</key>
-                <double>0.4</double>
+                <double>1</double>
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>56,214,111,427</rect>
+                <rect>22,85,44,171</rect>
                 <key>scale9Paddings</key>
-                <rect>56,214,111,427</rect>
+                <rect>22,85,44,171</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
@@ -303,7 +288,16 @@
             <struct type="SpriteSheet">
                 <key>files</key>
                 <array>
-                    <filename>.</filename>
+                    <filename>bird1.png</filename>
+                    <filename>bird2.png</filename>
+                    <filename>bird3.png</filename>
+                    <filename>bird4.png</filename>
+                    <filename>boom.png</filename>
+                    <filename>monster1.png</filename>
+                    <filename>monster2.png</filename>
+                    <filename>monster3.png</filename>
+                    <filename>pipe.png</filename>
+                    <filename>background.png</filename>
                 </array>
             </struct>
         </map>

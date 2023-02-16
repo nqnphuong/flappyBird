@@ -1,28 +1,35 @@
-import { Container, AnimatedSprite, Texture, Sprite  } from "pixi.js";
-
+import { Container, AnimatedSprite, Texture, Sprite } from "pixi.js";
+import { GAME_HEIGHT, GAME_WIDTH } from "../constant";
 export class Bird extends Container {
     constructor() {
         super();
     }
 
     create() {
-        let birdFrames = [
-            "bird1.png",
-            "bird2.png",
-            "bird3.png",
-            "bird4.png",
-        ];
         let texture = Texture.from("images/bird1.png");
         this.bird = new Sprite(texture);
-        this.bird.position.set(100, 50);
-        this.bird.scale(0.5, 0.5);
+        this.fly();
+        this.bird.position.set(225, 500);
         this.addChild(this.bird);
-        // const birdArray = [];
-        // for (let i = 0; i < 4; i++) {
-        //     const texture = Texture.from(birdFrames[i]);
-        //     birdArray.push(texture);
-        // }
-        // const animatedSprite = new AnimatedSprite(birdArray);
+        
+    }
+
+    fly() {
+        let birdFrames = [
+            "images/bird1.png",
+            "images/bird2.png",
+            "images/bird3.png",
+            "images/bird4.png",
+            "images/bird3.png",
+            "images/bird2.png",
+        ];
+        let birdObject = [];
+        for (let i = 0; i < 6; i++) {
+            birdObject.push(Texture.from(birdFrames[i]));
+        }
+        this.bird = new AnimatedSprite(birdObject);
+        this.bird.animationSpeed = 0.2;
+        this.bird.play();
     }
 
 }
