@@ -13,8 +13,8 @@ export default class Game {
         document.body.appendChild(this.app.view);
     }
 
-    loadAssets() {
-        Assets.load("./images/flappyBird.json");
+    async loadAssets() {
+        await Assets.load("./images/flappyBird.json");
         this.setup();
     }
 

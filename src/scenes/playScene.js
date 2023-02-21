@@ -2,16 +2,17 @@ import { Container, Sprite } from "pixi.js";
 import { GAME_HEIGHT, GAME_WIDTH } from "../constant";
 import { Bird } from "../objects/bird";
 import { Score } from "../objects/score";
-
+import { Pipes } from "../objects/pipes";
+import { getSpriteFromCache } from "../utils/utils";
 
 export class PlayScene extends Container {
     constructor(score) {
         super();
         this.score = score;
         this.playSceneContainer = new Container();
-        this.backgroundContainer = new Container();
-        this.birdContainer = new Container();
-        this.scoreContainer = new Container();
+        this.backgroundContainer = new Container(); // background - nam duoi cung
+        this.birdContainer = new Container(); // this is the container have the bird and the pipe
+        this.scoreContainer = new Container(); // container have the score - nam tren cung
         this.playScene();
 
         this.playSceneContainer.addChild(this.backgroundContainer);
@@ -23,16 +24,16 @@ export class PlayScene extends Container {
         this.createBackground();
         this.createBird();
         this.createScore();
+        this.createPipes();
     }
 
     createBackground() {
-        this.background = Sprite.from("./images/background.png");
+        this.background = getSpriteFromCache("background.png");
         this.background.x = 0;
         this.backgroundContainer.addChild(this.background);
-
-        this.backgroundRight = Sprite.from("./images/background.png");
-        this.backgroundRight.x = this.background.x + this.background.width,
-        console.log("Bug background.width " + this.background.width);
+        
+        this.backgroundRight = getSpriteFromCache("background.png");
+        this.backgroundRight.x = this.background.x + this.background.width;
         this.backgroundContainer.addChild(this.backgroundRight);
     }
 
@@ -46,6 +47,10 @@ export class PlayScene extends Container {
         this.score = new Score(this.score);
         this.score.create();
         this.scoreContainer.addChild(this.score);
+    }
+
+    createPipes(){
+        this.pipes = new Pipes();
     }
 
     updateBackground() {
