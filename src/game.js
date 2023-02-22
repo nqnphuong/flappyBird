@@ -26,21 +26,18 @@ export default class Game {
         // Set the game state
         this.state = this.play;
         //Start the game loop 
-        this.app.ticker.add((delta) => this.gameLoop(delta));
+        this.app.ticker.add((delta) => this.gameLoop());
     }
 
-    gameLoop(delta) {
+    gameLoop() {
         //Runs the current game `state` in a loop and renders the sprites
-        this.state(delta);
-    }
-
-    play(delta) {
         this.playScene.updateBackground();
         this.playScene.pipes.update();
+        this.playScene.bird.update();
     }
 
     end() {
-
+        this.playScene.visible = false;
     }
 
     update() {

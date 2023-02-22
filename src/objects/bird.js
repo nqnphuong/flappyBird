@@ -3,16 +3,19 @@ import { getSpriteFromCache, getTextureFromCache } from "../utils/utils";
 export class Bird extends Container {
     constructor() {
         super();
+        this.fly();
+        this.speed = 0;
+        this.acceleration = 50;
     }
 
     create() {
         this.bird = getSpriteFromCache("bird1.png");
-        this.fly();
+        this.animationFly();
         this.bird.position.set(160, 500);
         this.addChild(this.bird);
     }
 
-    fly() {
+    animationFly() {
         let birdFrames = [
             "bird1.png",
             "bird2.png",
@@ -29,6 +32,23 @@ export class Bird extends Container {
         this.bird = new AnimatedSprite(birdObject);
         this.bird.animationSpeed = 0.2;
         this.bird.play();
+    }
+
+    fly() {
+        document.addEventListener("keydown", (e) => {
+            // press space to fly
+            if (e.code == "Space") {
+                this.speed += this.acceleration;
+                this.bird.rotation = -0.5;
+            }
+        });
+
+    }
+
+    update() {
+        this.bird.y -= this.bird.y + this.speed;
+        // this.bird.rotation = 0.4;
+        this.speed -= 4;
     }
 
 }
