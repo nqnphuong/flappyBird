@@ -51,6 +51,8 @@ export class PlayScene extends Container {
 
     createPipes(){
         this.pipes = new Pipes();
+        this.pipes.createPipes();
+        this.birdContainer.addChild(this.pipes);
     }
 
     updateBackground() {

@@ -8,7 +8,7 @@ export class Bird extends Container {
     create() {
         this.bird = getSpriteFromCache("bird1.png");
         this.fly();
-        this.bird.position.set(225, 500);
+        this.bird.position.set(160, 500);
         this.addChild(this.bird);
     }
 

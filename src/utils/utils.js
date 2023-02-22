@@ -9,6 +9,8 @@ export function getTextureFromCache(name) {
     return utils.TextureCache[`${name}`];
 }
 
-export function random() {
-    return Math.floor(Math.random() * (GAME_HEIGHT - 0 + 1)) + 0;
+export function randomInt() {
+    const min = 400;
+    const max = GAME_HEIGHT - 200;
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }

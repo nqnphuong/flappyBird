@@ -36,6 +36,7 @@ export default class Game {
 
     play(delta) {
         this.playScene.updateBackground();
+        this.playScene.pipes.update();
     }
 
     end() {
