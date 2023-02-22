@@ -1,6 +1,6 @@
 import { Container } from "pixi.js";
 import { getSpriteFromCache, randomInt } from "../utils/utils";
-import { DISTANCE_BETWEEN_PIPES, GAME_HEIGHT, GAME_WIDTH } from "../constant";
+import { DISTANCE_BETWEEN_PIPE, GAME_HEIGHT, GAME_WIDTH, DISTANCE_TWO_PIPES } from "../constant";
 
 export class Pipes extends Container {
     constructor() {
@@ -9,33 +9,40 @@ export class Pipes extends Container {
 
     createPipes() {
         let x = 300;
-        this.pipe1 = getSpriteFromCache("pipe.png"); //tren
-        this.pipe1.position.set(x, randomInt());
+        this.pipesGroup = [];
 
-        this.pipe2 = getSpriteFromCache("pipe.png"); //duoi
-        this.pipe2.position.set(x, this.pipe1.y - DISTANCE_BETWEEN_PIPES);
-        this.pipe2.rotation = Math.PI;
-        this.pipe2.scale.x = -1;
+        for (let i = 1; i <= 3; i++) {
+            let pipes = [];
+            this.topPipe = getSpriteFromCache("pipe.png"); //tren
+            this.topPipe.position.set(x + i * DISTANCE_TWO_PIPES, randomInt());
+            pipes.push(this.topPipe);
 
-        this.addChild(this.pipe1);
-        this.addChild(this.pipe2);
+            this.botPipe = getSpriteFromCache("pipe.png"); //duoi
+            this.botPipe.position.set(x + i * DISTANCE_TWO_PIPES, this.topPipe.y - DISTANCE_BETWEEN_PIPE);
+            this.botPipe.rotation = Math.PI;
+            this.botPipe.scale.x = -1;
+            pipes.push(this.botPipe);
+
+            this.addChild(this.topPipe);
+            this.addChild(this.botPipe);
+            this.pipesGroup.push(pipes);
+        }
     }
 
-    // createThreePipes(){
-    //     this.ThreePipes = []
-    //     for(let i = 0; i < 3; i++){
-    //         let pipes = this.createPipes();
-    //         this.ThreePipes.push(pipes);
-    //     }
-    // }
+    update() {
+        this.pipesGroup.forEach(pipes => {
+            pipes[0].x -= 2;
+            pipes[1].x -= 2;
 
-    update(){
-        this.pipe1.x -= 2;
-        this.pipe2.x -= 2;
-
-        if(this.pipe1.x < GAME_WIDTH){
-
-        }
+            if (pipes[0].x < -110) {
+                pipes[0].y = randomInt();
+                pipes[1].y = pipes[0].y - DISTANCE_BETWEEN_PIPE;
+                pipes[0].x = this.pipesGroup[this.pipesGroup.length - 1][0].x + 380;
+                pipes[1].x = pipes[0].x;
+                this.pipesGroup.shift();
+                this.pipesGroup.push(pipes);
+            }
+        });
     }
 
 }
