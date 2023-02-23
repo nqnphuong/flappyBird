@@ -68,5 +68,11 @@ export class PlayScene extends Container {
         }
     }
 
+    updateScore(){
+        if (this.bird.x > this.pipes.x + this.pipes.width){
+            this.score.plusScore();
+        }
+    }
+
 
 }

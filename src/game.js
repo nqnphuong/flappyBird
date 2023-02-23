@@ -34,6 +34,7 @@ export default class Game {
         this.playScene.updateBackground();
         this.playScene.pipes.update();
         this.playScene.bird.update();
+        this.playScene.updateScore();
     }
 
     end() {

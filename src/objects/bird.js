@@ -51,4 +51,9 @@ export class Bird extends Container {
         this.speed -= 4;
     }
 
+    plusScore(){
+        this.score++;
+        this.scoreText.text = this.score;
+    }
+
 }
