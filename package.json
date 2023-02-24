@@ -4,8 +4,8 @@
   "description": "game flappyBird, PixiJS",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
-    "start": "webpack serve --open",
+    "start": "webpack serve --env env=dev --open",
+    "build": "webpack --env env=preview",
     "deploy": "gh-pages -d dist"
   },
   "repository": {

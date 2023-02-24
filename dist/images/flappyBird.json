@@ -1,0 +1,96 @@
+{"frames": {
+
+"background.png":
+{
+	"frame": {"x":0,"y":0,"w":512,"h":1024},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":512,"h":1024},
+	"sourceSize": {"w":512,"h":1024}
+},
+"bird1.png":
+{
+	"frame": {"x":0,"y":1024,"w":71,"h":61},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":71,"h":61},
+	"sourceSize": {"w":71,"h":61}
+},
+"bird2.png":
+{
+	"frame": {"x":71,"y":1024,"w":71,"h":61},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":71,"h":61},
+	"sourceSize": {"w":71,"h":61}
+},
+"bird3.png":
+{
+	"frame": {"x":142,"y":1024,"w":71,"h":61},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":71,"h":61},
+	"sourceSize": {"w":71,"h":61}
+},
+"bird4.png":
+{
+	"frame": {"x":213,"y":1024,"w":71,"h":61},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":71,"h":61},
+	"sourceSize": {"w":71,"h":61}
+},
+"boom.png":
+{
+	"frame": {"x":284,"y":1024,"w":40,"h":40},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":40,"h":40},
+	"sourceSize": {"w":40,"h":40}
+},
+"monster1.png":
+{
+	"frame": {"x":324,"y":1024,"w":52,"h":47},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":52,"h":47},
+	"sourceSize": {"w":52,"h":47}
+},
+"monster2.png":
+{
+	"frame": {"x":376,"y":1024,"w":56,"h":47},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":56,"h":47},
+	"sourceSize": {"w":56,"h":47}
+},
+"monster3.png":
+{
+	"frame": {"x":432,"y":1024,"w":55,"h":47},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":55,"h":47},
+	"sourceSize": {"w":55,"h":47}
+},
+"pipe.png":
+{
+	"frame": {"x":0,"y":1085,"w":111,"h":750},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":111,"h":750},
+	"sourceSize": {"w":111,"h":750}
+}},
+"animations": {
+	"bird": ["bird1.png","bird2.png","bird3.png","bird4.png"],
+	"monster": ["monster1.png","monster2.png","monster3.png"]
+},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.1",
+	"image": "flappyBird.png",
+	"format": "RGBA8888",
+	"size": {"w":512,"h":1835},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:e449fb2f969bb496f9c64e42314cebe4:ff29ab5b9c5f2c53fe00d811a2d2dee3:f7e828e61d15157324b477aa0bb878b6$"
+}
+}
