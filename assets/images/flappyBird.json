@@ -74,11 +74,11 @@
 },
 "pipe.png":
 {
-	"frame": {"x":0,"y":1085,"w":111,"h":750},
+	"frame": {"x":0,"y":1085,"w":110,"h":743},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":111,"h":750},
-	"sourceSize": {"w":111,"h":750}
+	"spriteSourceSize": {"x":0,"y":0,"w":110,"h":743},
+	"sourceSize": {"w":110,"h":743}
 }},
 "animations": {
 	"bird": ["bird1.png","bird2.png","bird3.png","bird4.png"],
@@ -89,8 +89,8 @@
 	"version": "1.1",
 	"image": "flappyBird.png",
 	"format": "RGBA8888",
-	"size": {"w":512,"h":1835},
+	"size": {"w":512,"h":1828},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:e449fb2f969bb496f9c64e42314cebe4:ff29ab5b9c5f2c53fe00d811a2d2dee3:f7e828e61d15157324b477aa0bb878b6$"
+	"smartupdate": "$TexturePacker:SmartUpdate:fe51e032219f804aa114934d516ca33c:810097aa8b89bbd19da964bdd195f0ee:f7e828e61d15157324b477aa0bb878b6$"
 }
 }

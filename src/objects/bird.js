@@ -3,8 +3,8 @@ import { getSpriteFromCache, getTextureFromCache } from "../utils/utils";
 export class Bird extends Container {
     constructor() {
         super();
-        this.fly();
-        this.speed = 0;
+        this.keyboard();
+        this.speed = 0; // con chim đang rot tu tren troi xuong
         this.acceleration = 50;
     }
 
@@ -34,7 +34,7 @@ export class Bird extends Container {
         this.bird.play();
     }
 
-    fly() {
+    keyboard() {
         document.addEventListener("keydown", (e) => {
             // press space to fly
             if (e.code == "Space") {
@@ -47,13 +47,8 @@ export class Bird extends Container {
 
     update() {
         this.bird.y -= this.bird.y + this.speed;
+        console.log("speed: "+ this.speed);
         // this.bird.rotation = 0.4;
-        this.speed -= 4;
+        this.speed -= 5;
     }
-
-    plusScore(){
-        this.score++;
-        this.scoreText.text = this.score;
-    }
-
 }

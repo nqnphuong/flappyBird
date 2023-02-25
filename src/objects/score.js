@@ -2,9 +2,9 @@ import { Container, TextStyle, Text } from "pixi.js";
 import { GAME_HEIGHT, GAME_WIDTH } from "../constant";
 
 export class Score extends Container{
-    constructor(score){
+    constructor(){
         super();
-        this.score = score;
+        this.score = 0;
     }
 
     create(){
@@ -13,10 +13,16 @@ export class Score extends Container{
             fontSize: 40,
             fill: "white",
             style: "bold"
-        });
+        });   
         this.message = new Text("SCORE: "+this.score, style);
         this.message.x = GAME_WIDTH/2 - 75;;
         this.message.y = 50;
         this.addChild(this.message);
+    }
+
+    update(){
+        this.score += 1;
+        this.message.text = "SCORE: "+this.score;
+        console.log(this.score);
     }
 }

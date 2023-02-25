@@ -6,9 +6,8 @@ import { Pipes } from "../objects/pipes";
 import { getSpriteFromCache } from "../utils/utils";
 
 export class PlayScene extends Container {
-    constructor(score) {
+    constructor() {
         super();
-        this.score = score;
         this.playSceneContainer = new Container();
         this.backgroundContainer = new Container(); // background - nam duoi cung
         this.birdContainer = new Container(); // this is the container have the bird and the pipe
@@ -44,7 +43,7 @@ export class PlayScene extends Container {
     }
 
     createScore() {
-        this.score = new Score(this.score);
+        this.score = new Score();
         this.score.create();
         this.scoreContainer.addChild(this.score);
     }
@@ -68,10 +67,10 @@ export class PlayScene extends Container {
         }
     }
 
-    updateScore(){
-        if (this.bird.x > this.pipes.x + this.pipes.width){
-            this.score.plusScore();
-        }
+    updateScore(){ 
+        if(this.bird.bird.x - this.pipes.botPipe.width == this.pipes.pipesGroup[0][0].x){
+            this.score.update();
+        }  
     }
 
 

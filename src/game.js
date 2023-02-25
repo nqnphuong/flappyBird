@@ -9,7 +9,6 @@ export default class Game {
             antialias: true,
             transparent: false
         });
-        this.score = 0;
         document.body.appendChild(this.app.view);
     }
 
@@ -19,29 +18,21 @@ export default class Game {
     }
 
     setup() {
-        console.log(this.score);
-        this.playScene = new PlayScene(this.score);
+        this.playScene = new PlayScene();
         this.app.stage.addChild(this.playScene.playSceneContainer);
-
-        // Set the game state
+        
         this.state = this.play;
-        //Start the game loop 
         this.app.ticker.add((delta) => this.gameLoop());
     }
 
     gameLoop() {
-        //Runs the current game `state` in a loop and renders the sprites
         this.playScene.updateBackground();
         this.playScene.pipes.update();
-        this.playScene.bird.update();
+        // this.playScene.bird.update();
         this.playScene.updateScore();
     }
 
     end() {
         this.playScene.visible = false;
-    }
-
-    update() {
-
     }
 }
