@@ -13,15 +13,18 @@ export class Pipes extends Container {
 
         for (let i = 1; i <= 3; i++) {
             let pipes = [];
-            this.topPipe = getSpriteFromCache("pipe.png"); //tren
-            this.topPipe.position.set(x + i * DISTANCE_TWO_PIPES, randomInt());
-            pipes.push(this.topPipe);
-
-            this.botPipe = getSpriteFromCache("pipe.png"); //duoi
-            this.botPipe.position.set(x + i * DISTANCE_TWO_PIPES, this.topPipe.y - DISTANCE_BETWEEN_PIPE);
-            this.botPipe.rotation = Math.PI;
-            this.botPipe.scale.x = -1;
+            this.botPipe = getSpriteFromCache("pipe.png"); //tren
+            this.botPipe.position.set(x + i * DISTANCE_TWO_PIPES, randomInt());
+            this.botPipe.note = "bot";
+            console.log("botPipe: " + this.botPipe.y);
             pipes.push(this.botPipe);
+
+            this.topPipe = getSpriteFromCache("pipe.png"); //duoi
+            this.topPipe.position.set(x + i * DISTANCE_TWO_PIPES, this.botPipe.y - DISTANCE_BETWEEN_PIPE);
+            this.topPipe.rotation = Math.PI;
+            this.topPipe.scale.x = -1;
+            this.topPipe.note = "top";
+            pipes.push(this.topPipe);
 
             this.addChild(this.topPipe);
             this.addChild(this.botPipe);

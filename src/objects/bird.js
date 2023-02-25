@@ -5,7 +5,7 @@ export class Bird extends Container {
         super();
         this.keyboard();
         this.speed = 0; // con chim đang rot tu tren troi xuong
-        this.acceleration = 50;
+        this.acceleration = 30;
     }
 
     create() {
@@ -46,9 +46,10 @@ export class Bird extends Container {
     }
 
     update() {
+        this.speed -= 2;
         this.bird.y -= this.bird.y + this.speed;
         console.log("speed: "+ this.speed);
         // this.bird.rotation = 0.4;
-        this.speed -= 5;
+        
     }
 }
