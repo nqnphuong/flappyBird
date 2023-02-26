@@ -4,14 +4,17 @@ export class Bird extends Container {
     constructor() {
         super();
         this.keyboard();
-        this.speed = 0; // con chim đang rot tu tren troi xuong
-        this.acceleration = 50;
+        this.v = 0;
+        this.g = 0.15;
+        // 
     }
 
     create() {
         this.bird = getSpriteFromCache("bird1.png");
         this.animationFly();
         this.bird.position.set(160, 500);
+        // this.bird.vx = 0;
+        // this.bird.vy = 0;
         this.addChild(this.bird);
     }
 
@@ -38,18 +41,18 @@ export class Bird extends Container {
         document.addEventListener("keydown", (e) => {
             // press space to fly
             if (e.code == "Space") {
-                this.speed += this.acceleration;
-                this.bird.rotation = -0.5;
+                this.fly();
             }
         });
+    }
 
+    fly(){
+        this.v -= 2;
+        this.bird.y -= this.v;
     }
 
     update() {
-        this.speed -= 3;
-        this.bird.y -= this.bird.y + this.speed;
-        console.log("speed: "+ this.speed);
-        // this.bird.rotation = 0.4;
-        
+        this.v += this.g;
+        this.bird.y = this.bird.y + this.v;
     }
 }
