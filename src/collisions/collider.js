@@ -4,14 +4,12 @@ export class Collider {
         hit = false;
 
         if (r2.note == "top"){
-            if ((r1.y < r2.y) && (r1.x + r1.width > r2.x)){
-                console.log("Dung tren");
+            if ((r1.y < r2.y) && (r1.x + r1.width > r2.x) && (r1.x < r2.x + r2.width)){
                 hit = true;
             }
         }
         if (r2.note == "bot"){
-            if ((r1.y + r1.height > r2.y) && (r1.x + r1.width > r2.x)){
-                console.log("Dung duoi");
+            if ((r1.y + r1.height > r2.y) && (r1.x + r1.width > r2.x) && (r1.x < r2.x + r2.width)){
                 hit = true;
             } 
         }

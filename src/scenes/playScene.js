@@ -55,8 +55,8 @@ export class PlayScene extends Container {
     }
 
     updateBackground() {
-        this.background.x -= 3;
-        this.backgroundRight.x -= 3;
+        this.background.x -= 2;
+        this.backgroundRight.x -= 2;
 
         if (this.background.x + this.background.width < 0) {
             this.background.x = this.backgroundRight.x + this.backgroundRight.width;

@@ -10,13 +10,14 @@ export class LoseScene extends Container {
 
     loseScene() {
         const style = new TextStyle({
-            fontFamily: "Futura",
+            fontFamily: "Franklin Gothic Heavy",
             fontSize: 64,
             fill: "white"
         });
         this.message = new Text("Lose", style);
-        this.message.x = 120;
+        this.message.x = GAME_WIDTH/2 - (this.message.width/2);
         this.message.y = GAME_HEIGHT / 2 - 32;
         this.loseSceneContainer.addChild(this.message);
     }
+
 }
