@@ -3,6 +3,8 @@ import { GAME_HEIGHT, GAME_WIDTH } from "./constant";
 import { PlayScene } from "./scenes/playScene";
 import { LoseScene } from "./scenes/loseScene";
 import { Collider } from "./collisions/collider";
+import { BeginScene } from "./scenes/beginScene";
+import { Keyboard } from "./input/keyboard";
 export default class Game {
     constructor() {
         this.app = new Application({
@@ -22,17 +24,39 @@ export default class Game {
     setup() {
         this.playScene = new PlayScene();
         this.app.stage.addChild(this.playScene.playSceneContainer);
+        this.playScene.playSceneContainer.skipChildrenUpdate = true;
+
         this.loseScene = new LoseScene();
         this.app.stage.addChild(this.loseScene.loseSceneContainer);
         this.loseScene.loseSceneContainer.visible = false;
 
-        this.state = this.play;
-        this.app.ticker.add((delta) => this.gameLoop(delta));
+        this.beginScene = new BeginScene();
+        this.app.stage.addChild(this.beginScene.beginSceneContainer);
+
+        this.state = this.waitStart;
     }
 
     gameLoop(delta) {
         this.state(delta);
     }
+
+    waitStart() {
+        this.space = new Keyboard("Space");
+        this.app.ticker.add(() => {
+            if (this.space.inDown) {
+                this.app.ticker.remove(this.waitStart);
+                this.start();
+            }
+        });
+    }
+
+    start() {
+        this.space.unsubscribe();
+        this.state = this.play;
+        this.playScene.playSceneContainer.skipChildrenUpdate = false;
+        this.beginScene.beginSceneContainer.visible = false;
+    }
+
 
     play() {
         this.playScene.updateBackground();
@@ -53,16 +77,10 @@ export default class Game {
                 }
             });
         });
-
-        // document.addEventListener("keydown", (e) => {
-        //     if (e.code == "KeyA") {
-        //         this.state = this.end;
-        //     }
-        // });
     }
 
     end() {
-        this.playScene.playSceneContainer.visible = false;
+        this.playScene.playSceneContainer.skipChildrenUpdate = false;
         this.loseScene.loseSceneContainer.visible = true;
     }
 }
