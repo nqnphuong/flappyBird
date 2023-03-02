@@ -47,6 +47,7 @@ export class Bird extends Container {
 
     update() {
         // this.animationFly();
+        console.log(this.v);
         this.v += G;
         this.bird.y += this.v;
     }
