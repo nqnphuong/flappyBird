@@ -1,6 +1,6 @@
 import { Container } from "pixi.js";
 import { getSpriteFromCache, randomInt } from "../utils/utils";
-import { DISTANCE_BETWEEN_PIPE, GAME_HEIGHT, GAME_WIDTH, DISTANCE_TWO_PIPES } from "../constant";
+import { DISTANCE_BETWEEN_PIPE, GAME_HEIGHT, GAME_WIDTH, DISTANCE_TWO_PIPES, SPEED_OBJECT } from "../constant";
 
 export class Pipes extends Container {
     constructor() {
@@ -34,8 +34,8 @@ export class Pipes extends Container {
 
     update() {
         this.pipesGroup.forEach(pipes => {
-            pipes[0].x -= 2;
-            pipes[1].x -= 2;
+            pipes[0].x -= SPEED_OBJECT;
+            pipes[1].x -= SPEED_OBJECT;
 
             if (pipes[0].x < -110) {
                 pipes[0].y = randomInt();

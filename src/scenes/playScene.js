@@ -1,5 +1,5 @@
 import { Container, Sprite } from "pixi.js";
-import { GAME_HEIGHT, GAME_WIDTH } from "../constant";
+import { GAME_HEIGHT, GAME_WIDTH, SPEED_OBJECT } from "../constant";
 import { Bird } from "../objects/bird";
 import { Score } from "../objects/score";
 import { Pipes } from "../objects/pipes";
@@ -55,8 +55,8 @@ export class PlayScene extends Container {
     }
 
     updateBackground() {
-        this.background.x -= 2;
-        this.backgroundRight.x -= 2;
+        this.background.x -= SPEED_OBJECT;
+        this.backgroundRight.x -= SPEED_OBJECT;
 
         if (this.background.x + this.background.width < 0) {
             this.background.x = this.backgroundRight.x + this.backgroundRight.width;
