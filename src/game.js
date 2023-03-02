@@ -33,11 +33,7 @@ export default class Game {
         this.beginScene = new BeginScene();
         this.app.stage.addChild(this.beginScene.beginSceneContainer);
 
-        this.state = this.waitStart;
-    }
-
-    gameLoop(delta) {
-        this.state(delta);
+        this.waitStart();
     }
 
     waitStart() {
@@ -45,6 +41,7 @@ export default class Game {
         this.app.ticker.add(() => {
             if (this.space.inDown) {
                 this.app.ticker.remove(this.waitStart);
+                this.playScene.bird.fly();
                 this.start();
             }
         });
@@ -52,16 +49,22 @@ export default class Game {
 
     start() {
         this.space.unsubscribe();
-        this.state = this.play;
-        this.playScene.playSceneContainer.skipChildrenUpdate = false;
+        console.log("Space ", this.space);
         this.beginScene.beginSceneContainer.visible = false;
+        this.playScene.playSceneContainer.skipChildrenUpdate = false;
+        this.state = this.play;
+        this.app.ticker.add((delta) => this.gameLoop(delta));
     }
 
+    
+    gameLoop(delta) {
+        this.state(delta);
+    }
 
     play() {
         this.playScene.updateBackground();
         this.playScene.pipes.update();
-        this.playScene.bird.update();
+        // this.playScene.bird.update();
         this.playScene.updateScore();
 
         // collision
