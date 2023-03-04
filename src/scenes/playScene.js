@@ -1,8 +1,10 @@
 import { Container, Sprite } from "pixi.js";
-import { GAME_HEIGHT, GAME_WIDTH, SPEED_OBJECT } from "../constant";
+import { SPEED_OBJECT } from "../constant";
 import { Bird } from "../objects/bird";
 import { Score } from "../objects/score";
 import { Pipes } from "../objects/pipes";
+import { Laze } from "../objects/laze";
+import { Bomb } from "../objects/bomb";
 import { getSpriteFromCache } from "../utils/utils";
 
 export class PlayScene extends Container {
@@ -11,11 +13,14 @@ export class PlayScene extends Container {
         this.playSceneContainer = new Container();
         this.backgroundContainer = new Container(); // background - nam duoi cung
         this.birdContainer = new Container(); // this is the container have the bird and the pipe
+        this.lazeContainer = new Container(); 
         this.scoreContainer = new Container(); // container have the score - nam tren cung
+        
         this.playScene();
 
         this.playSceneContainer.addChild(this.backgroundContainer);
         this.playSceneContainer.addChild(this.birdContainer);
+        this.playSceneContainer.addChild(this.lazeContainer);
         this.playSceneContainer.addChild(this.scoreContainer);
     }
 
@@ -23,7 +28,9 @@ export class PlayScene extends Container {
         this.createBackground();
         this.createBird();
         this.createScore();
+        this.createLaze();
         this.createPipes();
+        this.createBomb();
     }
 
     createBackground() {
@@ -38,13 +45,13 @@ export class PlayScene extends Container {
 
     createBird() {
         this.bird = new Bird();
-        this.bird.create();
+        this.bird.createBird();
         this.birdContainer.addChild(this.bird);
     }
 
     createScore() {
         this.score = new Score();
-        this.score.create();
+        this.score.createScore();
         this.scoreContainer.addChild(this.score);
     }
 
@@ -52,6 +59,22 @@ export class PlayScene extends Container {
         this.pipes = new Pipes();
         this.pipes.createPipes();
         this.birdContainer.addChild(this.pipes);
+    }
+
+    createLaze(){
+        this.laze = new Laze();
+        this.laze.createLaze();
+        this.lazeContainer.addChild(this.laze);
+    }
+
+    createBomb(){
+        this.bomb = new Bomb();
+        this.bomb.createBomb();
+        this.lazeContainer.addChild(this.bomb);
+
+        this.bombNumber = new Bomb();
+        this.bombNumber.createBombNumber();
+        this.scoreContainer.addChild(this.bombNumber);
     }
 
     updateBackground() {

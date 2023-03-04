@@ -10,13 +10,14 @@ export class Bird extends Container {
         // 
     }
 
-    create() {
+    createBird() {
         this.bird = getSpriteFromCache("bird1.png");
         this.animationFly();
         this.bird.position.set(160, 500);
         this.addChild(this.bird);
     }
 
+    // cho animation sau khi con chim bay -> cần fix lại
     animationFly() {
         let birdFrames = [
             "bird1.png",

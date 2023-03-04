@@ -7,7 +7,7 @@ export class Score extends Container{
         this.score = 0;
     }
 
-    create(){
+    createScore(){
         const style = new TextStyle({
             fontFamily: "Franklin Gothic Heavy",
             fontSize: 40,
@@ -15,7 +15,7 @@ export class Score extends Container{
             style: "bold"
         });   
         this.message = new Text("SCORE: "+this.score, style);
-        this.message.x = GAME_WIDTH/2 - 75;;
+        this.message.x = GAME_WIDTH/2 - 130;
         this.message.y = 50;
         this.addChild(this.message);
     }
@@ -23,6 +23,5 @@ export class Score extends Container{
     update(){
         this.score += 1;
         this.message.text = "SCORE: "+this.score;
-        console.log(this.score);
     }
 }

@@ -7,3 +7,4 @@ export const V_MIN = 0;
 export const FORCE = -8;
 export const G = 0.2;
 export const SPEED_OBJECT = 2;
+export const LASER_INTERVAL = 15 * 60;

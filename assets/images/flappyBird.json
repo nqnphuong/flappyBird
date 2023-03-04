@@ -40,7 +40,7 @@
 	"spriteSourceSize": {"x":0,"y":0,"w":71,"h":61},
 	"sourceSize": {"w":71,"h":61}
 },
-"boom.png":
+"bomb.png":
 {
 	"frame": {"x":284,"y":1024,"w":40,"h":40},
 	"rotated": false,
@@ -79,6 +79,14 @@
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":110,"h":743},
 	"sourceSize": {"w":110,"h":743}
+},
+"warning.png":
+{
+	"frame": {"x":110,"y":1085,"w":51,"h":51},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":51,"h":51},
+	"sourceSize": {"w":51,"h":51}
 }},
 "animations": {
 	"bird": ["bird1.png","bird2.png","bird3.png","bird4.png"],
@@ -91,6 +99,6 @@
 	"format": "RGBA8888",
 	"size": {"w":512,"h":1828},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:fe51e032219f804aa114934d516ca33c:810097aa8b89bbd19da964bdd195f0ee:f7e828e61d15157324b477aa0bb878b6$"
+	"smartupdate": "$TexturePacker:SmartUpdate:6c1af6976bd1af52fff3736f3910b228:1999236ad7fbe9a3827266170bca8f7e:f7e828e61d15157324b477aa0bb878b6$"
 }
 }

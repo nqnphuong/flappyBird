@@ -56,7 +56,7 @@ export default class Game {
         this.app.ticker.add((delta) => this.gameLoop(delta));
     }
 
-    
+
     gameLoop(delta) {
         this.state(delta);
     }
@@ -66,6 +66,11 @@ export default class Game {
         this.playScene.pipes.update();
         // this.playScene.bird.update();
         this.playScene.updateScore();
+        // setTimeout(() => {
+        //     console.log("Hello time");
+        //     this.playScene.laze.updateLaze();
+        // }, 10000);
+        this.playScene.bomb.updateBomb();
 
         // collision
         let hit = false;
@@ -73,13 +78,15 @@ export default class Game {
         this.playScene.pipes.pipesGroup.forEach(pipes => {
             pipes.forEach(pipe => {
                 if (this.collider.detectCollisions(this.playScene.bird.bird, pipe)) {
-                    hit = true;
+                    // hit = true;
                     console.log("Dung roi do");
-                    this.state = this.end;
-                    this.loseScene.message.text = "You lose!";
                 }
             });
         });
+        if (hit === true) {
+            this.state = this.end;
+            this.loseScene.message.text = "You lose!";
+        }
     }
 
     end() {
