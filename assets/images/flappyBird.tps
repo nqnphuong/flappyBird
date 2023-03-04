@@ -206,7 +206,7 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">boom.png</key>
+            <key type="filename">bomb.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -281,6 +281,21 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
+            <key type="filename">warning.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>spriteScale</key>
+                <double>0.1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>128,128,256,256</rect>
+                <key>scale9Paddings</key>
+                <rect>128,128,256,256</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
         </map>
         <key>fileLists</key>
         <map type="SpriteSheetMap">
@@ -292,12 +307,13 @@
                     <filename>bird2.png</filename>
                     <filename>bird3.png</filename>
                     <filename>bird4.png</filename>
-                    <filename>boom.png</filename>
                     <filename>monster1.png</filename>
                     <filename>monster2.png</filename>
                     <filename>monster3.png</filename>
                     <filename>pipe.png</filename>
                     <filename>background.png</filename>
+                    <filename>warning.png</filename>
+                    <filename>bomb.png</filename>
                 </array>
             </struct>
         </map>

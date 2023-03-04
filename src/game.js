@@ -56,7 +56,6 @@ export default class Game {
         this.app.ticker.add((delta) => this.gameLoop(delta));
     }
 
-
     gameLoop(delta) {
         this.state(delta);
     }

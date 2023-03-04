@@ -48,6 +48,10 @@ export class Pipes extends Container {
         });
     }
 
+    bombPipe(){
+        //
+    }
+
 }
 
 
